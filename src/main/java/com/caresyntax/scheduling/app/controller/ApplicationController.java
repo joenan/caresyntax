@@ -137,10 +137,7 @@ public class ApplicationController {
     @GetMapping("/patient/edit/{id}")
     public String editPatientById(@PathVariable("id") long id, ModelMap model) {
         Optional<Patient> patient = service.getPatientRepository().findById(id);
-//        if (patient.isPresent()) {
         model.addAttribute("patient", patient.get());
-//        }
-//        model.addAttribute("patient", new Patient());
         return "addPatient";
     }
 

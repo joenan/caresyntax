@@ -51,6 +51,14 @@ public class Patient implements Serializable {
     public Patient() {
     }
 
+    public Patient(String name, String sex, Date dateOfBirth) {
+        this.name = name;
+        this.sex = sex;
+        this.dateOfBirth = dateOfBirth;
+    }
+    
+    
+
     public Patient(Long patientId) {
         this.patientId = patientId;
     }
