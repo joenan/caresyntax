@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.caresyntax.scheduling.app.dao;
+package com.caresyntax.scheduling.app.repo;
 
 import com.caresyntax.scheduling.app.model.Doctor;
 import org.springframework.data.jpa.repository.JpaRepository;

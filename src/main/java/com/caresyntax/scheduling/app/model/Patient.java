@@ -19,6 +19,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 /**
  *
@@ -34,6 +35,7 @@ public class Patient implements Serializable {
     @Column(name = "patient_id")
     private Long patientId;
 
+    @Size(min = 2, max = 50)
     @NotNull(message = "Name cannot be empty. Name is a required field")
     @Column(name = "name")
     private String name;
@@ -56,8 +58,6 @@ public class Patient implements Serializable {
         this.sex = sex;
         this.dateOfBirth = dateOfBirth;
     }
-    
-    
 
     public Patient(Long patientId) {
         this.patientId = patientId;

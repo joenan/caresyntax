@@ -103,14 +103,9 @@
                         <li id="dashboard" class="active" style="">
                             <a href="/dashboard"><i class="fa fa-dashboard"></i><span>Dashboard</span></a>
                         </li>
-                        <li id="Patient">
-                            <a href="admin_Patient.html"><i class="fa fa-user-md"></i><span>Patients</span></a>
-                        </li>
+                        <li id="Patient"><a><i class="fa fa-user-md"></i><span>Patients</span></a></li>
 
-                        <li id="study">
-                            <a href="admin_patient.html"><i class="fa fa-book"></i><span>Study</span></a>
-
-                        </li>
+                        <li id="study"><a><i class="fa fa-book"></i><span>Study</span></a></li>
 
 
                     </ul>
@@ -124,7 +119,7 @@
                 <section class="content-header">
                     <h1>Patients</h1>
                     <ol class="breadcrumb">
-                        <li><a href="/"><i class="fa fa-home"></i> Home</a></li>
+                        <li><a href="${pageContext.request.contextPath}"><i class="fa fa-home"></i> Home</a></li>
                         <li class="active">Patient</li>
                     </ol>
                 </section>

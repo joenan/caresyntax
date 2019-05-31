@@ -89,7 +89,7 @@
                 <section class="sidebar active" style="height: auto;">
                     <div class="user-panel">
                         <div class="pull-left image">
-                           <img src="<c:url value="/img/def-profile-img.png" />" class="user-image" alt="User Image">
+                            <img src="<c:url value="/img/def-profile-img.png" />" class="user-image" alt="User Image">
                         </div>
                         <div class="pull-left info">
                             <p>Demo Admin</p>
@@ -100,11 +100,9 @@
                         <li id="dashboard" class="active" style=""><a
                                 href="/dashboard"><i class="fa fa-dashboard"></i><span>Dashboard</span></a>
                         </li>
-                        <li id="Patient"><a href="admin_Patient.html"><i
-                                    class="fa fa-user-md"></i><span>Patients</span></a></li>
+                        <li id="Patient"><a><i class="fa fa-user-md"></i><span>Patients</span></a></li>
 
-                        <li id="study"><a href="admin_patient.html"><i
-                                    class="fa fa-book"></i><span>Study</span></a></li>
+                        <li id="study"><a><i class="fa fa-book"></i><span>Study</span></a></li>
 
                     </ul>
                 </section>
@@ -118,7 +116,7 @@
                 <section class="content-header">
                     <h1>Patients</h1>
                     <ol class="breadcrumb">
-                        <li><a href="/"><i class="fa fa-home"></i> Home</a></li>
+                        <li><a href="${pageContext.request.contextPath}"><i class="fa fa-home"></i> Home</a></li>
                         <li class="active">Patient</li>
                     </ol>
                 </section>
@@ -152,7 +150,7 @@
                                             <div class="btn-group">
                                                 <form method="get" action="${pageContext.request.contextPath}/prepareSchedule">
                                                     <input type="hidden" name="scheduleId" id="scheduleId" />
-                                                    <button class="btn btn-block btn-primary btn-flat"
+                                                    <button disabled class="btn btn-block btn-primary btn-flat"
                                                             id="scheduleBtn">
                                                         <span class="hide-on-mobile">Schedule a
                                                             Procedure&nbsp;&nbsp;</span><i class="fa fa-th-list"></i>
@@ -172,7 +170,7 @@
                                                         <option value="InProgress">In Progress</option>
                                                         <option value="Finished">Finished</option>
                                                     </select>
-                                                    <button type="submit" id="statusButton" class="btn btn-primary btn-flat">
+                                                    <button type="submit" id="statusButton" class="btn btn-primary btn-flat" disabled>
                                                         <span class="hide-on-mobile">Change Status &nbsp;&nbsp;</span><i class="fa fa-exchange"></i> 
                                                     </button>
                                                 </form>
@@ -326,8 +324,7 @@
             </footer>
 
             <div class="loader" style="display: none;">
-                <img src="&lt;c:url value=" /img/loader.png" alt="" />" alt="loader"
-                     class="loading-anim">
+                <img src="<c:url value="/img/loader.png" />" alt="loader"  class="loading-anim">
             </div>
 
         </div>
@@ -353,11 +350,19 @@
                                                                                 $(this).addClass('success').siblings().removeClass('success');
                                                                             });
 
+                                                                            $('table tr').click(function (e) {
+                                                                                $("#scheduleBtn").removeAttr('disabled');
+                                                                                $("#statusButton").removeAttr('disabled');
+                                                                            });
+
+
+
                                                                             $('#scheduleBtn').click(function (e) {
                                                                                 var rows = getHighlightRow();
                                                                                 if (rows != undefined) {
                                                                                     //               
                                                                                     $('#scheduleId').val(rows.attr('id'));
+
                                                                                 }
 
                                                                             });

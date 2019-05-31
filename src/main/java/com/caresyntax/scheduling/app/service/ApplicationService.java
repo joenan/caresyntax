@@ -5,10 +5,10 @@
  */
 package com.caresyntax.scheduling.app.service;
 
-import com.caresyntax.scheduling.app.dao.DoctorRepository;
-import com.caresyntax.scheduling.app.dao.PatientRepository;
-import com.caresyntax.scheduling.app.dao.RoomRepository;
-import com.caresyntax.scheduling.app.dao.StudyRepository;
+import com.caresyntax.scheduling.app.repo.DoctorRepository;
+import com.caresyntax.scheduling.app.repo.PatientRepository;
+import com.caresyntax.scheduling.app.repo.RoomRepository;
+import com.caresyntax.scheduling.app.repo.StudyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
