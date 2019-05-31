@@ -62,7 +62,7 @@ public class ScheduleController {
 
     @GetMapping("/updateStatus")
     public String updateStatusOfProcedure(@RequestParam(value = "statusId", required = false) long id, @RequestParam(value = "statusName", required = false) String status, ModelMap model) {
-        Optional<Study> study = service.getStudyRepository().findStudyProcedureByPatientId(id);
+        Optional<Study> study = service.getStudyRepository().findByPatient_PatientId(id);
         if (study.isPresent()) {
             study.get().setStatus(status);
             Study updatedStudy = service.getStudyRepository().save(study.get());
