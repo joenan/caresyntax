@@ -33,7 +33,7 @@ import org.springframework.web.bind.annotation.RestController;
 @ApiOperation(value = "This controller is here should incase you want to Communicate to the backend via RESTFUL Web Services")
 @RestController
 @RequestMapping("/api/v1/schedule")
-public class JsonAPIController {
+public class APIController {
 
     @Autowired
     ApplicationService service;
